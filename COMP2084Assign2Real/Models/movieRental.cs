@@ -11,16 +11,16 @@ namespace COMP2084Assign2Real.Models
         public int owingAmount { get; set; }
 
         [Required]
-        public decimal movieTitle { get; set; }
+        public string movieTitle { get; set; }
 
         [Required]
-        public string dueDate { get; set; }
+        public int dueDate { get; set; }
 
         // FK
         [Required]
         public int rentalDate { get; set; }
 
         // parent ref
-        public userRental Product { get; set; }
+        public userRental userRental { get; set; }
     }
 }
