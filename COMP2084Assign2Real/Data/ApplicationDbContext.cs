@@ -11,7 +11,7 @@ namespace COMP2084Assign2Real.Data
             : base(options)
         {
         }
-        public DbSet<userRental> userRental { get; set; }
-        public DbSet<movieRental> Rentals { get; set; }
+        public DbSet<UserRental> userRental { get; set; }
+        public DbSet<MovieRental> Rentals { get; set; }
     }
 }

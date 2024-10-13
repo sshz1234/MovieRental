@@ -1,0 +1,48 @@
+﻿@model COMP2084Assign2Real.Models.UserRental
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>UserRental</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="owingAmount" class="control-label"></label>
+                <input asp-for="owingAmount" class="form-control" />
+                <span asp-validation-for="owingAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="movieTitle" class="control-label"></label>
+                <input asp-for="movieTitle" class="form-control" />
+                <span asp-validation-for="movieTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dueDate" class="control-label"></label>
+                <input asp-for="dueDate" class="form-control" />
+                <span asp-validation-for="dueDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rentalDate" class="control-label"></label>
+                <input asp-for="rentalDate" class="form-control" />
+                <span asp-validation-for="rentalDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace COMP2084Assign2Real.Models
 {
-    public class movieRental
+    public class MovieRental
     {
-        public int movieRentalId { get; set; }
+        public int MovieRentalId { get; set; }
 
         [Required]
         public int owingAmount { get; set; }
@@ -21,6 +21,6 @@ namespace COMP2084Assign2Real.Models
         public int rentalDate { get; set; }
 
         // parent ref
-        public userRental userRental { get; set; }
+        public UserRental UserRental { get; set; }
     }
 }

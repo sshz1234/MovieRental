@@ -2,9 +2,9 @@
 
 namespace COMP2084Assign2Real.Models
 {
-    public class userRental
+    public class UserRental
     {
-        public int movieRentalId { get; set; }
+        public int UserRentalId { get; set; }
 
         [Required]
         public int owingAmount { get; set; }
@@ -19,7 +19,7 @@ namespace COMP2084Assign2Real.Models
         [Required]
         public int rentalDate { get; set; }
 
-        public ICollection<movieRental> Rentals { get; set; }
+        public List<MovieRental>? movieRentals { get; set; }
 
     }
 }
