@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using COMP2084Assign2Real.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 
 namespace COMP2084Assign2Real.Data
@@ -9,5 +11,7 @@ namespace COMP2084Assign2Real.Data
             : base(options)
         {
         }
+        public DbSet<userRental> userRental { get; set; }
+        public DbSet<movieRental> Rentals { get; set; }
     }
 }

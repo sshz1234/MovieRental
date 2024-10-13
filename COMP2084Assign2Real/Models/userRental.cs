@@ -19,7 +19,7 @@ namespace COMP2084Assign2Real.Models
         [Required]
         public int rentalDate { get; set; }
 
-        
-       
+        public ICollection<movieRental> Rentals { get; set; }
+
     }
 }
