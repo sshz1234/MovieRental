@@ -22,7 +22,8 @@ namespace COMP2084Assign2Real.Controllers
         // GET: MovieRentals
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Rentals.ToListAsync());
+            var applicationDbContext = _context.Rentals.Include(m => m.Movie).Include(m => m.UserRental);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: MovieRentals/Details/5
@@ -34,6 +35,8 @@ namespace COMP2084Assign2Real.Controllers
             }
 
             var movieRental = await _context.Rentals
+                .Include(m => m.Movie)
+                .Include(m => m.UserRental)
                 .FirstOrDefaultAsync(m => m.MovieRentalId == id);
             if (movieRental == null)
             {
@@ -46,6 +49,8 @@ namespace COMP2084Assign2Real.Controllers
         // GET: MovieRentals/Create
         public IActionResult Create()
         {
+            ViewData["MovieId"] = new SelectList(_context.Movie, "MovieId", "name");
+            ViewData["UserRentalId"] = new SelectList(_context.userRental, "UserRentalId", "email");
             return View();
         }
 
@@ -54,7 +59,7 @@ namespace COMP2084Assign2Real.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("MovieRentalId,owingAmount,movieTitle,dueDate,rentalDate")] MovieRental movieRental)
+        public async Task<IActionResult> Create([Bind("MovieRentalId,owingAmount,dueDate,UserRentalId,MovieId,rentalDate")] MovieRental movieRental)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +67,8 @@ namespace COMP2084Assign2Real.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MovieId"] = new SelectList(_context.Movie, "MovieId", "name", movieRental.MovieId);
+            ViewData["UserRentalId"] = new SelectList(_context.userRental, "UserRentalId", "email", movieRental.UserRentalId);
             return View(movieRental);
         }
 
@@ -78,6 +85,8 @@ namespace COMP2084Assign2Real.Controllers
             {
                 return NotFound();
             }
+            ViewData["MovieId"] = new SelectList(_context.Movie, "MovieId", "name", movieRental.MovieId);
+            ViewData["UserRentalId"] = new SelectList(_context.userRental, "UserRentalId", "email", movieRental.UserRentalId);
             return View(movieRental);
         }
 
@@ -86,7 +95,7 @@ namespace COMP2084Assign2Real.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("MovieRentalId,owingAmount,movieTitle,dueDate,rentalDate")] MovieRental movieRental)
+        public async Task<IActionResult> Edit(int id, [Bind("MovieRentalId,owingAmount,dueDate,UserRentalId,MovieId,rentalDate")] MovieRental movieRental)
         {
             if (id != movieRental.MovieRentalId)
             {
@@ -113,6 +122,8 @@ namespace COMP2084Assign2Real.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["MovieId"] = new SelectList(_context.Movie, "MovieId", "name", movieRental.MovieId);
+            ViewData["UserRentalId"] = new SelectList(_context.userRental, "UserRentalId", "email", movieRental.UserRentalId);
             return View(movieRental);
         }
 
@@ -125,6 +136,8 @@ namespace COMP2084Assign2Real.Controllers
             }
 
             var movieRental = await _context.Rentals
+                .Include(m => m.Movie)
+                .Include(m => m.UserRental)
                 .FirstOrDefaultAsync(m => m.MovieRentalId == id);
             if (movieRental == null)
             {

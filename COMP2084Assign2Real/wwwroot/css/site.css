@@ -7,6 +7,9 @@ html {
     font-size: 16px;
   }
 }
+a{
+    color:greenyellow;
+}
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -18,5 +21,28 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: black;
+    color: #6e6b6a;
+}
+
+.navbar, .footer {
+    background-color: #4ae602;
+    color: white;
+    font-family: "Afacad Flux", sans-serif;
+}
+
+
+.div{
+    background-color:white;
+}
+table th, table td {
+    color: white;
+}
+/*imported stylesheet from googlesheets*/
+@font-face {
+    font-family: "Afacad Flux";
+    src: url("path-to-your-font/Afacad-Flux.woff2") format("woff2");
+    font-weight: normal; /* Specify the weight */
+    font-style: normal;
 }

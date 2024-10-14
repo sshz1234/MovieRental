@@ -7,19 +7,18 @@ namespace COMP2084Assign2Real.Models
         public int UserRentalId { get; set; }
 
         [Required]
-        public int owingAmount { get; set; }
+        public string name { get; set; }
 
         [Required]
-        public decimal movieTitle { get; set; }
+        public string email { get; set; }
 
         [Required]
-        public string dueDate { get; set; }
+        public string phone { get; set; }
 
-        // FK
-        [Required]
-        public int rentalDate { get; set; }
+        
 
-        public List<MovieRental>? movieRentals { get; set; }
 
+
+    
     }
 }

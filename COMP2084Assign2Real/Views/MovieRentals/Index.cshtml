@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<COMP2084Assign2Real.Models.MovieRental>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "movies";
 }
 
-<h1>Index</h1>
+<h1>Movie Rentals</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"> Rent a movie!</a>
 </p>
 <table class="table">
     <thead>
@@ -16,13 +16,16 @@
                 @Html.DisplayNameFor(model => model.owingAmount)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.movieTitle)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.dueDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.rentalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRental)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movie)
             </th>
             <th></th>
         </tr>
@@ -34,13 +37,16 @@
                 @Html.DisplayFor(modelItem => item.owingAmount)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.movieTitle)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.dueDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.rentalDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserRental.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.MovieRentalId">Edit</a> |

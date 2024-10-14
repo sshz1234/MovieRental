@@ -13,5 +13,6 @@ namespace COMP2084Assign2Real.Data
         }
         public DbSet<UserRental> userRental { get; set; }
         public DbSet<MovieRental> Rentals { get; set; }
+        public DbSet<Movie> Movie { get; set; }
     }
 }

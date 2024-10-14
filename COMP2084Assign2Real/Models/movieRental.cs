@@ -8,19 +8,32 @@ namespace COMP2084Assign2Real.Models
         public int MovieRentalId { get; set; }
 
         [Required]
-        public int owingAmount { get; set; }
+        [Display(Name="owing amount: ")]
+        [DisplayFormat(DataFormatString="{0:C}")]
+        public decimal owingAmount { get; set; }
+
+
+        
 
         [Required]
-        public string movieTitle { get; set; }
+        [Display(Name = "Return date: ")]
+        public DateTime dueDate { get; set; }
 
-        [Required]
-        public int dueDate { get; set; }
 
         // FK
         [Required]
-        public int rentalDate { get; set; }
+        [Display(Name = "Your email: ")]
+        public int UserRentalId { get; set; }
+        [Display(Name = "Name of Movie: ")]
+        public int MovieId { get; set; }
+        [Required]
+        [Display(Name = "Date rented: ")]
+        public DateTime rentalDate { get; set; }
+
 
         // parent ref
-        public UserRental UserRental { get; set; }
+        [Display(Name = "email of renter: ")]
+        public UserRental? UserRental { get; set; }
+        public Movie? Movie { get; set; }
     }
 }
