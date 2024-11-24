@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace COMP2084Assign2Real.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241014002317_UpdatedRental")]
-    partial class UpdatedRental
+    [Migration("20241124210826_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

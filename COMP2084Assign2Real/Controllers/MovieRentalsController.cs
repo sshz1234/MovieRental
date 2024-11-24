@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using COMP2084Assign2Real.Data;
 using COMP2084Assign2Real.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace COMP2084Assign2Real.Controllers
 {
+    [Authorize]
     public class MovieRentalsController : Controller
     {
         private readonly ApplicationDbContext _context;

@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using COMP2084Assign2Real.Data;
 using COMP2084Assign2Real.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace COMP2084Assign2Real.Controllers
 {
+    [Authorize]
+    //remove from consumers view
     public class UserRentalsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -66,6 +69,7 @@ namespace COMP2084Assign2Real.Controllers
         }
 
         // GET: UserRentals/Edit/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,6 +90,7 @@ namespace COMP2084Assign2Real.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int id, [Bind("UserRentalId,name,email,phone")] UserRental userRental)
         {
             if (id != userRental.UserRentalId)
@@ -117,6 +122,7 @@ namespace COMP2084Assign2Real.Controllers
         }
 
         // GET: UserRentals/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

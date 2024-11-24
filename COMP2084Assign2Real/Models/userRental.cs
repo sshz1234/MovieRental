@@ -3,6 +3,7 @@
 namespace COMP2084Assign2Real.Models
 {
     public class UserRental
+
     {
         public int UserRentalId { get; set; }
 
@@ -15,10 +16,5 @@ namespace COMP2084Assign2Real.Models
         [Required]
         public string phone { get; set; }
 
-        
-
-
-
-    
     }
 }

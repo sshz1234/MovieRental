@@ -37,9 +37,16 @@
                 @Html.DisplayFor(modelItem => item.rating)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.MovieId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.MovieId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.MovieId">Delete</a>
+                    @if (User.IsInRole("Administrator"))
+                {
+                        <a asp-action="Edit" asp-route-id="@item.MovieId" class="btn btn-secondary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.MovieId" class="btn btn-danger">Delete</a>
+                }
+                else if (User.Identity.IsAuthenticated){
+                        <a asp-action="Edit" asp-route-id="@item.MovieId" class="btn btn-secondary">Edit</a>
+                }
+                <a asp-action="Details" asp-route-id="@item.MovieId" class="btn btn-primary">Details</a> 
+                
             </td>
         </tr>
 }
