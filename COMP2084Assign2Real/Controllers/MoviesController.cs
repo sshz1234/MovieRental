@@ -24,7 +24,7 @@ namespace COMP2084Assign2Real.Controllers
         // GET: Movies
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Movie.ToListAsync());
+            return View("Index", await _context.Movie.ToListAsync());
         }
 
         // GET: Movies/Details/5
@@ -32,17 +32,17 @@ namespace COMP2084Assign2Real.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             var movie = await _context.Movie
                 .FirstOrDefaultAsync(m => m.MovieId == id);
             if (movie == null)
             {
-                return NotFound();
+                return View("404");
             }
 
-            return View(movie);
+            return View("Details",movie);
         }
 
         // GET: Movies/Create
@@ -65,7 +65,7 @@ namespace COMP2084Assign2Real.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(movie);
+            return View("Create",movie);
         }
 
         // GET: Movies/Edit/5
@@ -74,15 +74,15 @@ namespace COMP2084Assign2Real.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return View("404");
             }
 
             var movie = await _context.Movie.FindAsync(id);
             if (movie == null)
             {
-                return NotFound();
+                return View("404");
             }
-            return View(movie);
+            return View("Edit",movie);
         }
 
         // POST: Movies/Edit/5

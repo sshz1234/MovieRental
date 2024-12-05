@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COMP2084Assign2Real", "COMP2084Assign2Real\COMP2084Assign2Real.csproj", "{D70EBA5D-8CB0-4E42-ABCC-D151DAD9DB5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "COMP2084Assign2Real", "COMP2084Assign2Real\COMP2084Assign2Real.csproj", "{D70EBA5D-8CB0-4E42-ABCC-D151DAD9DB5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assign2Test", "Assign2Test\Assign2Test.csproj", "{32915F85-9427-4359-8E21-96CB524C6554}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D70EBA5D-8CB0-4E42-ABCC-D151DAD9DB5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D70EBA5D-8CB0-4E42-ABCC-D151DAD9DB5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D70EBA5D-8CB0-4E42-ABCC-D151DAD9DB5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32915F85-9427-4359-8E21-96CB524C6554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32915F85-9427-4359-8E21-96CB524C6554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32915F85-9427-4359-8E21-96CB524C6554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32915F85-9427-4359-8E21-96CB524C6554}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
