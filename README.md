@@ -1,1 +1,1 @@
-A movie rental app that requires the user to creat an account and register a movie to that account. security levels let admins edit certain things for the user they cannot. uses CRUD methods in order to make different changes to the website. added Google Auth
+A movie rental app that requires the user to creat an account and register a movie to that account. security levels let admins edit certain things for the user they cannot. uses CRUD methods in order to make different changes to the website. added Google Auth. Created in using ASP.NET
